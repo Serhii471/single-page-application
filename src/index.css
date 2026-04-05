@@ -1,0 +1,170 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --card-bg: #fff;
+  --primary: #3498db;
+  --header-bg: #ffffff;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --card-bg: #2d2d2d;
+  --primary: #4db8ff;
+  --header-bg: #242424;
+  --shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--primary);
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--primary);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Page Elements */
+.page {
+  padding-bottom: 2rem;
+}
+
+h1 {
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Projects Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .btn {
+  margin-top: auto;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Weather Widget */
+.weather-widget {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Quote & Timeline */
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  color: var(--primary);
+  margin: 2rem 0;
+}
+
+.timeline {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--header-bg);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
